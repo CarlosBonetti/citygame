@@ -1,14 +1,15 @@
 # -*- encoding : utf-8 -*-
 require_relative 'Modo'
 require_relative 'ModoPartida'
-require_relative '../../src/persistencia/DAOUsuario'
-require_relative '../../src/persistencia/DAOLogBatalha'
+#require_relative '../../src/persistencia/DAOUsuario'
+#require_relative '../../src/persistencia/DAOLogBatalha'
 
 class ModoNovoJogo < Modo
 
   def initialize jogo
     super jogo
-    @comandos = ['exit', 'help', 'registrar', 'login', 'status', 'iniciar', 'vitorias']
+    #@comandos = %w(exit help registrar login status iniciar vitorias)
+    @comandos = %w(exit help adicionar status iniciar)
   end
 
   def prefixo
@@ -19,12 +20,20 @@ class ModoNovoJogo < Modo
     puts "  Opções de criação de novo jogo:"
     puts "    * help                 - Exibe este texto de ajuda"
     puts "    * exit                 - Encerra o jogo"
-    puts "    * registrar            - Cria um novo jogador e o adiciona na base de dados"
-    puts "    * login                - Loga o jogador e o adiciona na partida (username e senha necessários)"
+    puts "    * adicionar            - Adiciona um jogador na partida"
+    #puts "    * registrar            - Cria um novo jogador e o adiciona na base de dados"
+    #puts "    * login                - Loga o jogador e o adiciona na partida (username e senha necessários)"
     puts "    * status               - Mostra os jogadores atuais"
     puts "    * iniciar              - Inicia a partida com os jogadores atuais, iniciando o modo 'partida'"
-    puts "    * vitorias [username]  - Mostra as batalhas vencidas pelo jogador"
+    #puts "    * vitorias [username]  - Mostra as batalhas vencidas pelo jogador"
     puts ""
+  end
+
+  def adicionar
+      username = ask 'username: '
+      user = Usuario.new username, '1234'
+      @jogo.adicionar_usuario user
+      success_msg "Usuário #{user.username} adicionado na partida!"
   end
 
   def registrar

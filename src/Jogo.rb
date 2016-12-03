@@ -4,7 +4,7 @@ require_relative 'Jogador'
 require_relative 'Cidade'
 require_relative 'Mapa'
 require_relative 'LogBatalha'
-require_relative 'persistencia/DAOLogBatalha'
+#require_relative 'persistencia/DAOLogBatalha'
 
 class Jogo
   attr_reader :jogadores, :jogador_atual
