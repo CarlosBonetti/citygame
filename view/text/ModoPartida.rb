@@ -6,7 +6,15 @@ class ModoPartida < Modo
 
   def initialize jogo
     super jogo
-    @comandos = %w(help exit pass status map balance move)
+    @comandos = {
+      help: t('commands.help.cmd'),
+      exit: t('commands.exit.cmd'),
+      map: t('commands.map.cmd'),
+      pass: t('commands.pass.cmd'),
+      status: t('commands.status.cmd'),
+      balance: t('commands.balance.cmd'),
+      move: t('commands.move.cmd')
+    }
   end
 
   def prefixo

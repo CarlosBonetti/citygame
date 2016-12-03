@@ -4,13 +4,13 @@ pt:
       default: '%H:%M:%S'
 
   commands:
-    exit:
-      cmd: 'sair'
-      help: 'Encerra o jogo'
-      params: ''
     help:
       cmd: 'ajuda'
       help: 'Exibe este texto de ajuda'
+      params: ''
+    exit:
+      cmd: 'sair'
+      help: 'Encerra o jogo'
       params: ''
     add:
       cmd: 'adicionar'

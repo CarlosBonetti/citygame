@@ -8,8 +8,13 @@ class ModoNovoJogo < Modo
 
   def initialize(jogo)
     super jogo
-    # @comandos = %w(help exit registrar login status iniciar vitorias)
-    @comandos = %w(help exit add status start)
+    @comandos = {
+      help: t('commands.help.cmd'),
+      exit: t('commands.exit.cmd'),
+      add: t('commands.add.cmd'),
+      status: t('commands.status.cmd'),
+      start: t('commands.start.cmd')
+    }
   end
 
   def prefixo
