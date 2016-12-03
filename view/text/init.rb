@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'colorize'
 require 'readline'
+require_relative '../../src/config/locale'
 require_relative '../../src/Jogo'
 require_relative 'CommandParser'
 require_relative 'ModoNovoJogo'
@@ -20,9 +21,7 @@ puts "  \\/_____/   \\/_/     \\/_/   \\/_____/   \\/_____/   \\/_/\\/_/   \\/_/
 puts "".colorize :color => :light_cyan, :mode => :bold
 puts "".colorize :color => :light_cyan, :mode => :bold
 
-puts "Digite 'help' a qualquer momento para visualizar os comandos disponíveis"
-puts "Chame seus amigos e divirta-se :)"
-puts ""
+puts I18n.t 'welcome'
 
 Readline.completion_append_character = ' ' # Caracter impresso após uma chamada de auto completar
 
