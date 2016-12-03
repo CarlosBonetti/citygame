@@ -42,7 +42,7 @@ pt:
       params: '[ID_FONTE], [N_SOLDADOS], [DIRECAO]'
 
   welcome:
-    - "Digite \'help\' a qualquer momento para visualizar os comandos disponíveis"
+    - "Digite \'ajuda\' a qualquer momento para visualizar os comandos disponíveis"
     - "Chame seus amigos e divirta-se :)"
 
   new-game: 'Novo jogo'

@@ -2,7 +2,48 @@ en:
   time:
     formats:
       default: '%H:%M:%S'
-      
+
+  commands:
+    help:
+      cmd: 'help'
+      help: 'Show this help text'
+      params: ''
+    exit:
+      cmd: 'exit'
+      help: 'Finished the game'
+      params: ''
+    add:
+      cmd: 'add'
+      help: 'Add a player to the match'
+      params: ''
+    status:
+      cmd: 'status'
+      help: 'Show current game info'
+      params: ''
+    start:
+      cmd: 'start'
+      help: 'Start the current match'
+      params: ''
+    pass:
+      cmd: 'pass'
+      help: 'Finishes current player turn'
+      params: ''
+    map:
+      cmd: 'map'
+      help: 'Show the map'
+      params: ''
+    balance:
+      cmd: 'balance'
+      help: 'Balance the troups and technology produced by a city'
+      params: '[CITY_ID], [TROUPS], [TECH]'
+    move:
+      cmd: 'move'
+      help: 'Move a quanity of soldiers from a local to the the defined direction. DIRECTION can be one of {NORTE, SUL, LESTE, OESTE}'
+      params: '[SOURCE_ID], [SOLDIER_COUNT], [DIRECTION]'
+
   welcome:
     - "Type \'help\' at any time to print the available commands"
     - "Call your fiends and have fun :)"
+
+  new-game: 'New game'
+  turn: 'Turn'
