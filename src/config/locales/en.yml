@@ -1,7 +1,9 @@
 en:
   time:
+    am: 'am'
+    pm: 'pm'
     formats:
-      default: '%H:%M:%S'
+      default: '%I:%M%P'
 
   commands:
     help:

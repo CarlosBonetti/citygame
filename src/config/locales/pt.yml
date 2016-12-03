@@ -1,7 +1,7 @@
 pt:
   time:
     formats:
-      default: '%H:%M:%S'
+      default: '%H:%M'
 
   commands:
     help:
