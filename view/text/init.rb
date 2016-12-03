@@ -23,13 +23,19 @@ puts "".colorize :color => :light_cyan, :mode => :bold
 
 puts t :welcome
 
-Readline.completion_append_character = ' ' # Caracter impresso após uma chamada de auto completar
+# Caracter impresso após uma chamada de auto completar
+Readline.completion_append_character = ' '
 
 while modo.ativo do
-  Readline.completion_proc = modo.completion_proc # Atribui o processo de auto completar ao interpretador de comandos
+  # Atribui o processo de auto completar ao interpretador de comandos
+  Readline.completion_proc = modo.completion_proc
 
-  input = Readline.readline(modo.prefixo, true) # Lê um novo comando do input padrão, salvando no histórico de comandos digitados
-  command_hash = parser.parse(input)            # Interpreta a string digitada
+  # Lê um novo comando do input padrão, salvando no histórico de comandos
+  input = Readline.readline(modo.prefixo, true)
+  # Interpreta a string digitada
+  command_hash = parser.parse(input)
 
-  modo = modo.submeter_comando command_hash     # Submete o comando ao modo de jogo atual, recebendo a instância do próximo modo de jogo (pode ser o mesmo ou um novo)
+  # Submete o comando ao modo de jogo atual, recebendo a instância do próximo
+  # modo de jogo (pode ser o mesmo ou um novo)
+  modo = modo.submeter_comando command_hash
 end
