@@ -6,7 +6,7 @@ class ModoPartida < Modo
 
   def initialize jogo
     super jogo
-    @comandos = ['exit', 'help', 'pass', 'status', 'map', 'balance', 'move']
+    @comandos = %w(help exit pass status map balance move)
   end
 
   def prefixo
@@ -17,18 +17,6 @@ class ModoPartida < Modo
     s <<= "#{@jogo.jogador_atual.nome}".colorize cor_jogador(@jogo.jogador_atual)
     s <<= ' ~> '
     return s
-  end
-
-  def help
-    puts "  Opções de partida:"
-    puts "   * help                                     - Exibe este texto de ajuda"
-    puts "   * exit                                     - Encerra o jogo"
-    puts "   * pass                                     - Passa a vez"
-    puts "   * status                                   - Mostra informações do jogador e recursos"
-    puts "   * map                                      - Exibe o mapa"
-    puts "   * balance [ID_CIDADE], [TROPAS], [TECNO] - Altera o balanceamento de tropas e tecnologia produzidas por uma cidade"
-    puts "   * move [ID_FONTE], [N_SOLDADOS], [DIRECAO] - Move a quantidade de soldados de um local na direção definida. DIRECAO pode ser {NORTE, SUL, LESTE, OESTE}"
-    puts ""
   end
 
   def pass

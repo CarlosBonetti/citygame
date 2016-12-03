@@ -72,4 +72,20 @@ public
     @ativo = !c
   end
 
+  # Exibe um texto de ajuda com os comandos atuais
+  def help
+    puts '  Comandos:'
+    @comandos.each { |cmd|
+      params = t('commands.' + cmd + '.params').colorize(:yellow)
+      text = t('commands.' + cmd + '.help')
+
+      if !params.empty?
+        puts '    * ' + cmd.colorize(:light_cyan) + ' ' + params + ' - ' + text
+      else
+        puts '    * ' + cmd.colorize(:light_cyan) + ' - ' + text
+      end
+    }
+    puts ''
+  end
+
 end

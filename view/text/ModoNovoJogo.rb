@@ -6,27 +6,14 @@ require_relative 'ModoPartida'
 
 class ModoNovoJogo < Modo
 
-  def initialize jogo
+  def initialize(jogo)
     super jogo
-    #@comandos = %w(exit help registrar login status iniciar vitorias)
-    @comandos = %w(exit help add status start)
+    # @comandos = %w(help exit registrar login status iniciar vitorias)
+    @comandos = %w(help exit add status start)
   end
 
   def prefixo
     l(Time.now).colorize(:blue) + ' ' + t('new-game') + ' ~> '
-  end
-
-  def help
-    puts "  Opções de criação de novo jogo:"
-    puts "    * help                 - Exibe este texto de ajuda"
-    puts "    * exit                 - Encerra o jogo"
-    puts "    * add                  - Adiciona um jogador na partida"
-    #puts "    * registrar            - Cria um novo jogador e o adiciona na base de dados"
-    #puts "    * login                - Loga o jogador e o adiciona na partida (username e senha necessários)"
-    puts "    * status               - Mostra os jogadores atuais"
-    puts "    * start                - Inicia a partida com os jogadores atuais, iniciando o modo 'partida'"
-    #puts "    * vitorias [username]  - Mostra as batalhas vencidas pelo jogador"
-    puts ""
   end
 
   def add

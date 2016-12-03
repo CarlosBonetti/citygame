@@ -3,6 +3,44 @@ pt:
     formats:
       default: '%H:%M:%S'
 
+  commands:
+    exit:
+      cmd: 'sair'
+      help: 'Encerra o jogo'
+      params: ''
+    help:
+      cmd: 'ajuda'
+      help: 'Exibe este texto de ajuda'
+      params: ''
+    add:
+      cmd: 'adicionar'
+      help: 'Adiciona um jogador na partida'
+      params: ''
+    status:
+      cmd: 'status'
+      help: 'Mostra informações do jogo atual'
+      params: ''
+    start:
+      cmd: 'iniciar'
+      help: 'Inicia a partida com os jogadores atuais, iniciando o modo "partida"'
+      params: ''
+    pass:
+      cmd: 'passar'
+      help: 'Passa a vez'
+      params: ''
+    map:
+      cmd: 'mapa'
+      help: 'Exibe o mapa'
+      params: ''
+    balance:
+      cmd: 'balancear'
+      help: 'Altera o balanceamento de tropas e tecnologia produzidas por uma cidade'
+      params: '[ID_CIDADE], [TROPAS], [TECNO]'
+    move:
+      cmd: 'mover'
+      help: 'Move a quantidade de soldados de um local na direção definida. DIRECAO pode ser {NORTE, SUL, LESTE, OESTE}'
+      params: '[ID_FONTE], [N_SOLDADOS], [DIRECAO]'
+
   welcome:
     - "Digite \'help\' a qualquer momento para visualizar os comandos disponíveis"
     - "Chame seus amigos e divirta-se :)"
