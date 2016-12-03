@@ -13,7 +13,7 @@ class ModoNovoJogo < Modo
   end
 
   def prefixo
-    return 'new-game ~> '
+    l(Time.now).colorize(:blue) + ' ' + t('new-game') + ' ~> '
   end
 
   def help

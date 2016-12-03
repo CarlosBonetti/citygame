@@ -5,3 +5,11 @@ I18n.load_path = Dir['src/config/locales/*.yml']
 
 # Set default locale to something other than :en
 I18n.default_locale = :pt
+
+def t(*params)
+  I18n.translate(*params)
+end
+
+def l(*params)
+  I18n.localize(*params)
+end

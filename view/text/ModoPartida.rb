@@ -10,7 +10,10 @@ class ModoPartida < Modo
   end
 
   def prefixo
-    s = "turno#{@jogo.turno} @ "
+    s = l(Time.now).colorize :blue
+    s << ' '
+    s <<= t 'turn'
+    s <<= "#{@jogo.turno} @ "
     s <<= "#{@jogo.jogador_atual.nome}".colorize cor_jogador(@jogo.jogador_atual)
     s <<= ' ~> '
     return s
@@ -89,7 +92,7 @@ class ModoPartida < Modo
         if matriz[i][j].is_cidade
           tamanho_dos_locais += 14*2
           cor_da_cidade = :default
-          cor_da_cidade = cor_jogador(matriz[i][j].jogador) if matriz[i][j].jogador          
+          cor_da_cidade = cor_jogador(matriz[i][j].jogador) if matriz[i][j].jogador
           local = (local << "}".colorize(cor_da_cidade)).prepend "{".colorize(cor_da_cidade)  # Cidades são representadas com {}
         else
           local = (local << "]").prepend "["  # Campos são representados com []

@@ -21,7 +21,7 @@ puts "  \\/_____/   \\/_/     \\/_/   \\/_____/   \\/_____/   \\/_/\\/_/   \\/_/
 puts "".colorize :color => :light_cyan, :mode => :bold
 puts "".colorize :color => :light_cyan, :mode => :bold
 
-puts I18n.t 'welcome'
+puts t :welcome
 
 Readline.completion_append_character = ' ' # Caracter impresso após uma chamada de auto completar
 
