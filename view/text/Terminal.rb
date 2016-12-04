@@ -7,10 +7,10 @@ module Terminal
   # @param [String] Mensagem apresentada
   # @return [Boolean] True em caso de confirmação
   def confirm_msg msg
-    print msg.colorize(:yellow), " (s, n) "
+    print msg.colorize(:yellow), t("yes_no");
     c = gets
     c = c.strip.downcase
-    return c == 's'
+    return c == 's' || c == 'y'
   end
 
   # Imprime uma mensagem padrão de sucesso

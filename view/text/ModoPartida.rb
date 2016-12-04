@@ -23,7 +23,7 @@ class ModoPartida < Modo
     @jogo.passar_a_vez
     if @jogo.terminou?
       vencedor = @jogo.jogadores.pop
-      puts "Parabéns #{vencedor.nome}! Você venceu."
+      puts t("congratulation") + "#{vencedor.nome} !"+t("you_win") 
       @ativo = false
     else
       clear()
@@ -31,18 +31,18 @@ class ModoPartida < Modo
   end
 
   def status
-    puts "Tecnologia atual: #{@jogo.jogador_atual.tecnologia}"
-    puts "Recursos:"
+    puts t("current_technology")+" #{@jogo.jogador_atual.tecnologia}"
+    puts t("resources")
     @jogo.jogador_atual.cidades.each do |cidade|
-      puts "  cidade##{cidade.id} ~> soldados: +#{cidade.g_tropas} | tecnologia: +#{cidade.g_tecnologia}"
+      puts t("city")+"##{cidade.id} ~> "+t("soldier")+": +#{cidade.g_tropas} | "+t(technology)+": +#{cidade.g_tecnologia}"
     end
   end
 
   def map
     # Imprimir legenda do mapa
     s = "\nLegenda:  "
-    s <<= "{ }" + " => Cidade   "
-    s <<= "[ ]" + " => Campo\n"
+    s <<= "{ }" + " => "+t("city")+"  "
+    s <<= "[ ]" + " => "+t("field")+"\n"
 
     for jogador in @jogo.jogadores
       nome_do_jogador = "%-8s" % jogador.nome
@@ -110,7 +110,7 @@ class ModoPartida < Modo
       return
     end
 
-    success_msg "Quantidade de recursos produzidos alterada"
+    success_msg t("resource_change")
   end
 
   def move id_fonte, n_soldados, direcao
@@ -125,7 +125,7 @@ class ModoPartida < Modo
       return
     end
 
-    success_msg "Tropa movida para o local #{destino.id}"
+    success_msg t("move_troops")+"#{destino.id}"
   end
 
   # Retorna a cor do jogador passado

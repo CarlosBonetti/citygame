@@ -45,5 +45,50 @@ pt:
     - "Digite \'help\' a qualquer momento para visualizar os comandos disponíveis"
     - "Chame seus amigos e divirta-se :)"
 
+  yes_no:
+    - " (s , n) "
+
+  congratulation: "Parabéns "
+
+  you_win: "Você venceu."
+
+  current_technology: "Tecnologia atual:"
+
+  technology: "tecnologia"
+
+  city: "Cidade"
+
+  soldiers: "soldados"
+
+  resources: "Recursos:"
+
+  resource_change: "Quantidade de recursos produzidos alterada"
+
+  field: "Campo"
+
+  move_troops: "Tropa movida para o local " 
+
+  user_added: "adicionado na partida!"
+
+  password_confirm: "confirmação de senha"
+
+  user: "Usuário"
+
+  user_registered: "cadastrado! Efetue login para entrar na partida"
+
+  battle_won: "Batalhas vencidas por "
+
+  no_user: "[Nenhum jogador criado]"
+
+  current_players: "[Jogadores atualmente cadastrados]"
+
+  match_started: "Partida iniciada!"
+
+  not_valid_command:  "não é um comando válido... Digite 'help' caso esteja perdido!"
+
+  argument_number_incorrect: "Número de argumentos inválido. Digite 'help' para ver o número correto de argumentos do comando"
+
+  lose_information: "Encerrar o jogo, perdendo todas as informações?"
+
   new-game: 'Novo jogo'
   turn: 'Turno'
