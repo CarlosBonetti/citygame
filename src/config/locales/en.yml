@@ -1,45 +1,54 @@
 en:
   time:
+    am: 'am'
+    pm: 'pm'
     formats:
-      default: '%H:%M:%S'
+         default: '%I:%M%P'
 
   commands:
-    exit:
-      cmd: 'exit'
-      help: 'Finish game'
-      params: ''
     help:
       cmd: 'help'
-      help: 'Show help text'
+      help: 'Show this help text'
+      params: ''
+    exit:
+      cmd: 'exit'
+      help: 'Finished the game'
       params: ''
     add:
       cmd: 'add'
-      help: 'Add player to the match'
+      help: 'Add a player to the match'
       params: ''
     status:
       cmd: 'status'
-      help: 'Show game info'
+      help: 'Show current game info'
       params: ''
     start:
-      cmd: 'iniciar'
-      help: 'Start match with current players, mode "match"'
+      cmd: 'start'
+      help: 'Start the current match'
       params: ''
     pass:
-      cmd: 'passar'
-      help: 'Pass turn'
+      cmd: 'pass'
+      help: 'Finishes current player turn'
       params: ''
     map:
-      cmd: 'mapa'
-      help: 'Show map'
+      cmd: 'map'
+      help: 'Show the map'
       params: ''
     balance:
-      cmd: 'balancear'
-      help: 'Change troops and technology balancing production in one city'
-      params: '[ID_CIDADE], [TROPAS], [TECNO]'
+      cmd: 'balance'
+      help: 'Balance the troups and technology produced by a city'
+      params: '[CITY_ID], [TROUPS], [TECH]'
     move:
-      cmd: 'mover'
-      help: 'Move N soldiers from one spot in one direction {NORTE, SUL, LESTE, OESTE}'
-      params: '[ID_FONTE], [N_SOLDADOS], [DIRECAO]'
+      cmd: 'move'
+      help: 'Move a quanity of soldiers from a local to the the defined direction. DIRECTION can be one of {NORTE, SUL, LESTE, OESTE}'
+      params: '[SOURCE_ID], [SOLDIER_COUNT], [DIRECTION]'
+
+  welcome:
+    - "Type \'help\' at any time to print the available commands"
+    - "Call your fiends and have fun :)"
+
+  new-game: 'New game'
+  turn: 'Turn'
 
   yes_no: " (y , n) "
 

@@ -22,23 +22,27 @@ class Modo
   # Processo para o auto completar dos comandos disponíveis
   # @return [Proc]
   def completion_proc
-    return proc { |s| comandos.grep(/^#{s}/) }
+    return proc { |s| comandos.values.grep(/^#{s}/) }
   end
 
   # Submete um comando
   # @param [Hash] Hash com {:command => 'nome do comando requisitado', :options => 'array com os argumentos'}
   # @return [Modo] Retorna um novo modo de jogo
   def submeter_comando command_hash
-    if !validar_comando(command_hash[:command]) then
+    name = command_hash[:command]
+    cmd = @comandos.key(name)
+
+    if !validar_comando(cmd) then
       error_msg "'#{command_hash[:command]}'"+t("not_valid_command")
+
       return self
     end
 
     begin
       if command_hash[:options].empty?
-        r = self.send(command_hash[:command])
+        r = self.send(cmd)
       else
-        r = self.send(command_hash[:command], *command_hash[:options])
+        r = self.send(cmd, *command_hash[:options])
       end
     rescue ArgumentError => e
       error_msg t("argument_number_incorrect")
@@ -75,14 +79,15 @@ public
   # Exibe um texto de ajuda com os comandos atuais
   def help
     puts '  Comandos:'
-    @comandos.each { |cmd|
+    @comandos.each { |key, name|
+      cmd = key.to_s
       params = t('commands.' + cmd + '.params').colorize(:yellow)
       text = t('commands.' + cmd + '.help')
 
       if !params.empty?
-        puts '    * ' + cmd.colorize(:light_cyan) + ' ' + params + ' - ' + text
+        puts '    * ' + name.colorize(:light_cyan) + ' ' + params + ' - ' + text
       else
-        puts '    * ' + cmd.colorize(:light_cyan) + ' - ' + text
+        puts '    * ' + name.colorize(:light_cyan) + ' - ' + text
       end
     }
     puts ''
