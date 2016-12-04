@@ -33,7 +33,8 @@ class Modo
     cmd = @comandos.key(name)
 
     if !validar_comando(cmd) then
-      error_msg "'#{name}' não é um comando válido... Digite 'help' caso esteja perdido!"
+      error_msg "'#{command_hash[:command]}'"+t("not_valid_command")
+
       return self
     end
 
@@ -44,7 +45,7 @@ class Modo
         r = self.send(cmd, *command_hash[:options])
       end
     rescue ArgumentError => e
-      error_msg "Número de argumentos inválido. Digite 'help' para ver o número correto de argumentos do comando"
+      error_msg t("argument_number_incorrect")
     rescue => e
       warning_msg e.inspect
     end
@@ -71,7 +72,7 @@ public
 
   # Encerra o jogo e termina a aplicação
   def exit
-    c = confirm_msg "Encerrar o jogo, perdendo todas as informações?"
+    c = confirm_msg t("lose_information")
     @ativo = !c
   end
 

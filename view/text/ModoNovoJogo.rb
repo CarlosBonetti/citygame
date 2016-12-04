@@ -25,7 +25,7 @@ class ModoNovoJogo < Modo
       username = ask 'username: '
       user = Usuario.new username, '1234'
       @jogo.adicionar_usuario user
-      success_msg "Usuário #{user.username} adicionado na partida!"
+      success_msg t("user")+" #{user.username} "+t("user_added")
   end
 
   def registrar
@@ -48,7 +48,7 @@ class ModoNovoJogo < Modo
       return
     end
 
-    success_msg "Usuário #{username} cadastrado! Efetue login para entrar na partida"
+    success_msg t("user")+" #{username} "+t("user_registered")
   end
 
   def login
@@ -64,16 +64,16 @@ class ModoNovoJogo < Modo
     end
 
     @jogo.adicionar_usuario user
-    success_msg "Usuário #{user.username} adicionado na partida!"
+    success_msg t("user")+" #{user.username} "+t("user_added")
   end
 
   def status
     if @jogo.jogadores.size == 0 then
-      puts "[Nenhum jogador criado]"
+      puts t("no_user")
       return
     end
 
-    puts "[Jogadores atualmente cadastrados]"
+    puts t("current_players")
     @jogo.jogadores.each do |jogador|
       puts "  ##{jogador.id} #{jogador.nome}"
     end
@@ -89,7 +89,7 @@ class ModoNovoJogo < Modo
     end
 
     modo_partida = ModoPartida.new(@jogo)
-    success_msg "Partida iniciada!"
+    success_msg t("match_started")
     return modo_partida
   end
 
@@ -99,7 +99,7 @@ class ModoNovoJogo < Modo
 
     return if batalhas.empty?
 
-    puts "Batalhas vencidas por #{username}"
+    puts  t("battle_won")+" #{username}"
     batalhas.each do |batalha|
       print "   #{batalha.turnos} turnos. Jogadores: "
       nomes = batalha.jogadores.map { |j| j.username }

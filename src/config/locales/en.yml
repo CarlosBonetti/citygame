@@ -3,7 +3,7 @@ en:
     am: 'am'
     pm: 'pm'
     formats:
-      default: '%I:%M%P'
+         default: '%I:%M%P'
 
   commands:
     help:
@@ -49,3 +49,53 @@ en:
 
   new-game: 'New game'
   turn: 'Turn'
+
+  yes_no: " (y , n) "
+
+  congratulation: "Congratulation" 
+
+  you_win: "You win"
+
+  current_technology: "Current technology:"
+
+  technology: "technology"
+
+  city: "city"
+
+  soldiers: "soldiers"
+
+  resources: "resources:"
+
+  field: "Field"
+
+  resource_change: "Amount of resource production changed"
+
+  move_troops: "Troops moved to location " 
+
+  user: "User"
+
+  user_added: "added to the the match!"
+
+  password_confirm: "Confirm password"
+
+  user_registered: "registered! Login to enter the match."
+
+  battle_won: "Battle won by "
+
+  no_user: "[No user created]"
+
+  current_players: "[Currently registered players]"
+
+  match_started: "Match started!"
+
+  not_valid_command:  "not a valid command... Type 'help' in case you are lost!"
+
+  argument_number_incorrect: "Invalid argument number. Type 'help' to see the correct number"
+
+  lose_information: "Finish game, losing all information?"
+
+  welcome:
+    - "Type \'help\' at any time to print the available commands"
+    - "Call your friends and have fun :)"
+
+
